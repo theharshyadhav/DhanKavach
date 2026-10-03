@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dhan Kavach – Money confidence for every Indian</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap"><style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#f3f5ff;--bg2:#e2e7ff;--card:#fff;--ink:#1b2150;--mut:#5d6599;--gold:#ffb938;--gold2:#c9840a;--grn:#37d6a0;--red:#ff6b81;--acc:#7c8cff;--acc2:#4a56d8}
+
+*,*:before,*:after{box-sizing:inherit}
+html{height:100%}
+body{margin:0;min-height:100%;background:radial-gradient(1200px 600px at 50% -10%,var(--bg2),var(--bg));color:var(--ink);font:16px/1.45 "Plus Jakarta Sans",system-ui,"Noto Sans Devanagari",Segoe UI,sans-serif;background-color:var(--bg);overflow-x:hidden}
+header{display:flex;align-items:center;gap:8px;padding:12px 16px;position:sticky;top:env(safe-area-inset-top,0px);z-index:5;backdrop-filter:blur(10px);background:color-mix(in srgb,var(--bg) 70%,transparent)}
+header b{font-size:18px;flex:1}header b span{color:var(--gold)}
+.chip{background:var(--card);border-radius:20px;padding:5px 12px;font-size:13px;border:1px solid #1e2a7a22;cursor:pointer;color:var(--ink)}
+main{max-width:720px;margin:0 auto;padding:8px 16px 110px;perspective:1100px}
+h2{margin:6px 0 4px;font-size:24px}p.s{color:var(--mut);margin:0 0 14px}
+.t{transform-style:preserve-3d;transition:transform .15s ease-out;background:linear-gradient(145deg,var(--card),color-mix(in srgb,var(--card) 70%,#000));border-radius:20px;padding:16px;margin:12px 0;box-shadow:0 1px 0 #1e2a7a22 inset,0 18px 30px -12px #1e2a7a38,0 4px 0 #1e2a7a1f;border:1px solid #e9ecff}
+.t>*{transform:translateZ(22px)}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.btn{font:inherit;font-weight:700;border:0;border-radius:14px;padding:12px 18px;color:#fff;background:var(--acc);box-shadow:0 5px 0 var(--acc2),0 10px 16px #1e2a7a26;cursor:pointer;transition:.08s;min-height:44px}
+.btn:active{transform:translateY(4px);box-shadow:0 1px 0 var(--acc2)}
+.btn.g{background:var(--gold);color:#2a1a00;box-shadow:0 5px 0 var(--gold2),0 10px 16px #1e2a7a26}
+.btn.r{background:var(--red);box-shadow:0 5px 0 #b33}.btn.n{background:var(--grn);color:#012;box-shadow:0 5px 0 #1a9c76}
+.btn:disabled{opacity:.45}
+.opt{display:block;width:100%;text-align:left;margin:8px 0;background:#e9ecff;color:var(--ink);box-shadow:0 4px 0 #1e2a7a26;font-weight:500}
+.opt.ok{background:var(--grn);color:#012}.opt.no{background:var(--red)}
+.bar{height:12px;border-radius:9px;background:#1e2a7a26;overflow:hidden;box-shadow:inset 0 2px 4px #1e2a7a38}.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--gold),#fff1b0);transition:width .5s}
+.scene{height:130px;display:grid;place-items:center}
+.cube{width:80px;height:80px;position:relative;transform-style:preserve-3d;animation:sp 14s linear infinite}
+.f{position:absolute;inset:0;display:grid;place-items:center;font-size:34px;background:#e9ecff;border:1px solid #1e2a7a30;backdrop-filter:blur(2px);border-radius:10px}
+.f:nth-child(1){transform:translateZ(40px)}.f:nth-child(2){transform:rotateY(90deg) translateZ(40px)}.f:nth-child(3){transform:rotateY(180deg) translateZ(40px)}.f:nth-child(4){transform:rotateY(270deg) translateZ(40px)}.f:nth-child(5){transform:rotateX(90deg) translateZ(40px)}.f:nth-child(6){transform:rotateX(-90deg) translateZ(40px)}
+@keyframes sp{to{transform:rotateX(360deg) rotateY(360deg)}}
+nav{position:fixed;left:0;right:0;bottom:0;display:flex;justify-content:center;gap:6px;padding:8px 8px calc(8px + env(safe-area-inset-bottom,0px));background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(12px);z-index:6}
+nav button{flex:1;max-width:120px;font:inherit;font-size:12px;border:0;background:none;color:var(--mut);padding:6px;border-radius:12px;cursor:pointer}
+nav button b{display:block;font-size:22px}nav button.on{color:var(--gold);background:#e9ecff;transform:translateZ(0) translateY(-3px)}
+.chart{background:#1e2a7a2e;border-radius:14px;box-shadow:inset 0 3px 8px #1e2a7a40}
+.stat{display:flex;justify-content:space-between;font-size:14px;color:var(--mut)}.stat b{color:var(--ink)}
+.modal{position:fixed;inset:0;background:#1b215099;display:grid;place-items:center;z-index:20;padding:16px;perspective:900px}
+.modal .t{max-width:440px;width:100%;margin:0;max-height:92%;overflow:auto}
+.orb{width:110px;height:110px;margin:10px auto;border-radius:50%;background:radial-gradient(circle at 32% 28%,#fff,var(--acc) 40%,var(--acc2) 75%);box-shadow:0 20px 30px #1e2a7a38,0 0 40px var(--acc);animation:br 8s ease-in-out infinite}
+@keyframes br{0%,100%{transform:scale(.7)}50%{transform:scale(1.25)}}
+.pill{display:inline-block;margin:4px 4px 0 0;padding:8px 12px;border-radius:20px;background:#e9ecff;cursor:pointer;border:1px solid #1e2a7a22;font-size:14px}.pill.on{background:var(--gold);color:#2a1a00}
+input,textarea{width:100%;font:inherit;padding:11px;border-radius:12px;border:1px solid #1e2a7a22;background:#1e2a7a1f;color:var(--ink);margin:4px 0 8px}
+pre{white-space:pre-wrap;background:#1e2a7a26;padding:12px;border-radius:12px;font:13px/1.5 ui-monospace,monospace;overflow-x:auto}
+.bdg{text-align:center;font-size:36px}.bdg.lock{filter:grayscale(1);opacity:.4}.bdg small{display:block;font-size:12px;color:var(--mut)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px}
+#toast{position:fixed;top:70px;left:50%;transform:translateX(-50%) translateY(-120px);background:var(--gold);color:#2a1a00;padding:10px 18px;border-radius:30px;font-weight:700;z-index:30;transition:.4s;box-shadow:0 10px 20px #1e2a7a2e}#toast.on{transform:translateX(-50%) translateY(0)}
+.hero{background:linear-gradient(135deg,#3a46c9,#1a1f4d 70%);border-color:#ffffff80}.eyebrow{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);font-weight:700}
+.ring{flex:none;width:92px;height:92px;border-radius:50%;background:conic-gradient(var(--grn) calc(var(--p)*1%),#dfe3ff 0);display:flex;flex-direction:column;justify-content:center;align-items:center;position:relative;box-shadow:0 12px 22px #1e2a7a33}.ring:before{content:"";position:absolute;inset:9px;border-radius:50%;background:var(--bg2)}.ring>*{position:relative}.ring b{font-size:26px;line-height:1}.ring small{font-size:11px;color:var(--mut)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.grid2 .t{margin:0;cursor:pointer}.tile .ic{font-size:34px;filter:drop-shadow(0 6px 4px #1e2a7a2e)}.tile p{margin:2px 0 0;font-size:13px}
+.lb{display:block;font-size:13px;color:var(--mut);margin-top:6px}.slab{display:flex;height:44px;margin:12px 0;border-radius:12px;overflow:hidden;box-shadow:0 8px 0 #1e2a7a26,0 14px 20px #1e2a7a2e;transform:rotateX(18deg);transform-origin:bottom}.slab i{display:grid;place-items:center;font:700 12px inherit;font-style:normal;color:#fff;overflow:hidden;transition:width .4s}
+.chk{display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-bottom:1px solid #1e2a7a14;font-size:14px}.chk input{width:22px;height:22px;margin:0;flex:none;accent-color:var(--grn)}
+.cols{display:flex;gap:10px;align-items:flex-end;height:170px;margin:14px 0 4px;padding-top:14px}.col{flex:1;height:100%;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;text-align:center}.col small{font-size:10px;color:var(--mut)}.col i{width:78%;border-radius:8px 8px 3px 3px;box-shadow:6px 0 0 #1e2a7a1f,0 10px 14px #1e2a7a26;transition:height .4s}
+input[type=range]{padding:0;accent-color:var(--gold)}.foot{font-size:12px;color:var(--mut);text-align:center;margin-top:20px}
+
+body:before,body:after{content:"";position:fixed;border-radius:50%;z-index:-1;animation:fl 9s ease-in-out infinite;pointer-events:none}
+body:before{width:340px;height:340px;right:-110px;top:70px;background:radial-gradient(circle at 30% 30%,#fff,#c3ccff 55%,#8f9cff);opacity:.55}
+body:after{width:220px;height:220px;left:-80px;bottom:120px;background:radial-gradient(circle at 30% 30%,#fff,#ffe2a6 55%,#ffbf4d);opacity:.5;animation-delay:-4s}
+@keyframes fl{50%{transform:translateY(-24px) scale(1.04)}}
+.t{background:linear-gradient(145deg,#fff,#f1f3ff);border:1px solid #fff;box-shadow:0 1px 0 #fff inset,0 22px 34px -14px #1e2a7a40,0 5px 0 #d5dafc}
+.hero{background:linear-gradient(135deg,#fff,#dfe5ff 75%)}.eyebrow,#ge{color:#b36b00}header b span{color:#e08a00}
+input,textarea{background:#f5f6ff}.chart,pre{background:#eef0ff}.bar{background:#dfe3ff}.ring:before{background:#fff}
+
+.chat #cl{max-height:46vh;overflow:auto;padding:4px;perspective:700px}
+.bub{max-width:88%;padding:10px 14px;border-radius:18px;margin:8px 0;font-size:15px;box-shadow:0 5px 0 #d5dafc,0 12px 18px -8px #1e2a7a40;animation:pop .4s both}
+.bub.b{background:#fff;border:1px solid #e3e7ff;border-bottom-left-radius:4px}.bub.u{margin-left:auto;background:linear-gradient(135deg,#7c8cff,#4a56d8);color:#fff;box-shadow:0 5px 0 #3441b8,0 12px 18px -8px #1e2a7a50;border-bottom-right-radius:4px}
+@keyframes pop{from{transform:translateZ(-80px) rotateX(25deg) scale(.85);opacity:0}}.bub small{cursor:pointer;opacity:.7}
+.dots i{display:inline-block;width:9px;height:9px;margin:0 3px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#fff,#7c8cff);animation:bn 1s infinite}.dots i:nth-child(2){animation-delay:.15s}.dots i:nth-child(3){animation-delay:.3s}@keyframes bn{50%{transform:translateY(-8px)}}
+.fl{perspective:1200px}.fi{position:relative;height:450px;transform-style:preserve-3d;transition:transform .8s cubic-bezier(.3,1.3,.5,1)}.fi.f{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;padding:18px;overflow:auto;border-radius:22px;background:linear-gradient(145deg,#fff,#eef1ff);border:1px solid #fff;box-shadow:0 26px 40px -16px #1e2a7a55,0 6px 0 #d5dafc}.fb{transform:rotateY(180deg)}
+.sc{height:110px;touch-action:none;cursor:grab;margin-top:6px}.sc .cube{animation:none}
+nav button{font-size:11px!important;padding:6px 2px!important}
+.btn.r{color:#fff}.chip{box-shadow:0 3px 0 #d5dafc}</style></head><body>
+<header><b style="font-weight:800">🛡️ Dhan <span>Kavach</span></b><button class="chip" id="sp" aria-label="Read aloud">🔊</button><button class="chip" id="lg">हिन्दी</button><span class="chip" id="xp"></span></header>
+<main id="v"></main>
+<nav id="nv"></nav><div id="toast"></div>
+<script>
+const $=s=>document.querySelector(s);
+const TX={en:{home:"Home",calm:"Calm",rights:"Rights",badges:"Badges",hi:"Hello, Investor",sub:"Lose less. Decide calmly. Know your rights.",d:"Track D · Cooling-Off Circuit Breaker",dd:"Trade a fictional market. When emotions spike, the breaker makes you pause.",b:"Track B · Rights Quest",bb:"Build a real complaint draft and test your rights knowledge.",play:"Play",lvl:"Level",streak:"day streak",buy:"Buy",sell:"Sell all",gen:"Generate draft",copy:"Copy"},
+hi:{home:"होम",calm:"शांत",rights:"अधिकार",badges:"बैज",hi:"नमस्ते, निवेशक",sub:"कम नुकसान। शांत फ़ैसले। अपने अधिकार जानें।",d:"ट्रैक D · कूलिंग-ऑफ सर्किट ब्रेकर",dd:"काल्पनिक बाज़ार में ट्रेड करें। जज़्बात उबलें तो ब्रेकर आपको रोकेगा।",b:"ट्रैक B · अधिकार क्वेस्ट",bb:"शिकायत का मसौदा बनाएँ और अपने अधिकार परखें।",play:"खेलें",lvl:"स्तर",streak:"दिन की लड़ी",buy:"ख़रीदें",sell:"सब बेचें",gen:"मसौदा बनाएँ",copy:"कॉपी"}};
+Object.assign(TX.en,{ask:"Ask AI",budget:"Budget",invest:"Invest",hi:"Welcome back",sub:"Plan, protect and invest with confidence."});Object.assign(TX.hi,{ask:"AI पूछें",budget:"बजट",invest:"निवेश",hi:"वापसी पर स्वागत है",sub:"योजना बनाएँ, सुरक्षित रहें, भरोसे से निवेश करें।"});
+const DEF={xp:0,lang:"en",badges:[],last:"",streak:0,best:0};
+let S;try{S={...DEF,...JSON.parse(localStorage.getItem("dk")||"{}")}}catch(e){S={...DEF}}
+const sv=()=>{try{localStorage.setItem("dk",JSON.stringify(S))}catch(e){}};
+const t=k=>TX[S.lang][k]||TX.en[k]||k;
+const BD={pause:["🧘","Cool Head","Took a breaker pause"],cancel:["🛑","Walked Away","Cancelled an impulsive trade"],zen:["🏆","Zen Trader","Calm score 80+"],comp:["📣","Voice Raised","Built a complaint draft"],rr:["⚖️","Rights Ranger","Scored 3+ in rights quiz"],fam:["👨‍👩‍👧","Family Shield","Every account has a nominee"],bud:["📊","Budget Boss","Locked your budget plan"],chk:["✅","Smart Checker","Passed 5+ readiness checks"],ai:["🤖","Curious Mind","Asked Kavach a question"],qz:["🎓","Quiz Master","Aced an AI quiz"],lvl3:["🚀","Level 3","Reached level 3"]};
+function award(x,b){S.xp+=x;let m="+"+x+" XP";if(b&&!S.badges.includes(b)){S.badges.push(b);m+=" · "+BD[b][0]+" "+BD[b][1]}
+ if(Math.floor(S.xp/100)>=2&&!S.badges.includes("lvl3")){S.badges.push("lvl3")}sv();toast(m);hd()}
+function toast(m){const e=$("#toast");e.textContent=m;e.classList.add("on");setTimeout(()=>e.classList.remove("on"),2200)}
+function hd(){$("#xp").textContent="⭐ "+S.xp+" XP · "+t("lvl")+" "+(Math.floor(S.xp/100)+1);$("#lg").textContent=S.lang=="en"?"हिन्दी":"English"}
+let tm=null,view="home";
+function go(x){view=x;clearInterval(tm);hd();
+ $("#nv").innerHTML=[["home","🏠"],["budget","📊"],["invest","🎯"],["ask","🤖"],["calm","🧘"],["rights","⚖️"]].map(([k,i])=>`<button class="${k==x?"on":""}" onclick="go('${k}')"><b>${i}</b>${t(k)}</button>`).join("");
+ ({home:Home,budget:Budget,invest:Invest,ask:Ask,calm:Calm,rights:Rights,badges:Badges})[x]();scrollTo(0,0)}
+$("#sp").onclick=()=>{try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(v.innerText.replace(/\s+/g," ").slice(0,900));u.lang=S.lang=="hi"?"hi-IN":"en-IN";u.rate=.95;speechSynthesis.speak(u)}catch(e){toast("Voice not supported on this device")}};$("#xp").onclick=()=>go("badges");$("#lg").onclick=()=>{S.lang=S.lang=="en"?"hi":"en";sv();go(view)};
+document.addEventListener("pointermove",e=>{const c=e.target.closest&&e.target.closest(".t");document.querySelectorAll(".t").forEach(x=>{if(x!==c)x.style.transform=""});if(!c)return;const r=c.getBoundingClientRect(),px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;c.style.transform=`rotateX(${-py*8}deg) rotateY(${px*8}deg)`});
+document.addEventListener("pointerleave",()=>document.querySelectorAll(".t").forEach(x=>x.style.transform=""));
+const TIPS=["No genuine broker asks for your OTP or screen-share. Ever.","'Guaranteed returns' is a red flag, not a feature.","Check SEBI registration on SEBI's own website, not on a link sent to you.","A loss is not a reason to trade faster. It is a reason to pause.","Add a nominee to every account today. It saves your family months of paperwork."];
+const R=n=>"₹"+Math.round(n).toLocaleString("en-IN");
+S.bud=S.bud||{inc:50000,rent:12000,food:8000,tr:3000,bill:3000,emi:0,oth:8000,ef:20000};S.ck=S.ck||[];S.pf=S.pf||{sip:5000,yrs:10,ret:11,inf:6};
+function bcalc(){const b=S.bud,n=b.rent+b.food+b.tr+b.bill+b.emi,sv=b.inc-n-b.oth;return{needs:n,wants:b.oth,sv,sp:b.inc?sv/b.inc*100:0,mo:n?b.ef/n:0,emi:b.inc?b.emi/b.inc*100:0}}
+function score(){const c=bcalc();return Math.round(Math.max(0,Math.min(40,c.sp*2))+Math.min(30,c.mo*5)+S.ck.length/8*20+(S.bestCalm||0)/10)}
+function Home(){const l=Math.floor(S.xp/100)+1,sc=score();
+ v.innerHTML=`<div class="t hero"><div class="row" style="justify-content:space-between;flex-wrap:nowrap"><div><span class="eyebrow">Your financial health</span><h2>${t("hi")}</h2><p class="s">${t("sub")}</p></div><div class="ring" style="--p:${sc}"><b>${sc}</b><small>/100</small></div></div><div class="scene sc"><div class="cube">${["🛡️","₹","📊","🧘","🤖","⚖️"].map(x=>`<div class="f">${x}</div>`).join("")}</div></div>
+ <div class="stat"><span>${t("lvl")} <b>${l}</b></span><span><b>${S.xp%100}</b>/100 XP</span></div><div class="bar"><i style="width:${S.xp%100}%"></i></div></div>
+ <div class="grid2">${[["ask","🤖","Ask Kavach AI","Plain-language answers to your doubts","c"],["ask","🎓","AI quiz arena","Fresh quizzes on any topic","q"],["budget","📊","Budget planner","See where every rupee goes"],["invest","🎯","Decision studio","Check readiness, plan goals"],["calm","🧘","Calm lab","Practise staying cool under pressure"],["rights","⚖️","Rights & help","Complaints, nominees, scams"]].map(([k,i,a,b,m])=>`<div class="t tile" onclick="AM='${m||"c"}';go('${k}')"><div class="ic">${i}</div><b>${a}</b><p class="s">${b}</p></div>`).join("")}</div>
+ <div class="t"><b>💡 Today's shield tip</b><p class="s" style="margin:6px 0 0">${TIPS[new Date().getDate()%TIPS.length]}</p></div>
+ <p class="foot">Dhan Kavach is an educational tool. It does not give personal investment advice or recommend any security, and is not affiliated with any broker or regulator. Your data stays on this device.</p>`;spin($(".sc .cube"))}
+function Budget(){const F=[["inc","Monthly income"],["rent","Rent / housing"],["food","Food & groceries"],["tr","Transport"],["bill","Bills & utilities"],["emi","Loan EMIs"],["oth","Wants (shopping, dining, fun)"],["ef","Emergency savings so far"]];
+ v.innerHTML=`<h2>📊 Budget planner</h2><p class="s">Monthly amounts in ₹. Numbers never leave this device.</p><div class="t">${F.map(([k,n])=>`<label class="lb">${n}</label><input type="number" inputmode="numeric" data-k="${k}" value="${S.bud[k]}">`).join("")}</div><div id="bres"></div>`;
+ document.querySelectorAll("[data-k]").forEach(i=>i.oninput=()=>{S.bud[i.dataset.k]=+i.value||0;sv();bres()});bres()}
+function lockB(){if(S.bl)return toast("Plan already locked");S.bl=1;award(20,"bud")}
+function bres(){const c=bcalc(),b=S.bud,tot=Math.max(b.inc,c.needs+c.wants)||1,w=x=>Math.max(0,x/tot*100),tp=[];
+ tp.push(c.sv<0?["🚨","You spend more than you earn. Trim wants first."]:c.sp<20?["⚠️","Savings are under 20%. Try moving 5% from wants to savings."]:["✅","Healthy savings rate. Make it automatic."]);
+ tp.push(["🛟","Emergency fund covers "+c.mo.toFixed(1)+" months."+(c.mo<6?" Build towards 6 months before investing.":"")]);
+ if(c.emi>40)tp.push(["⛓️","EMIs take "+c.emi.toFixed(0)+"% of income. Above about 40% is risky."]);
+ $("#bres").innerHTML=`<div class="t"><b>Where your income goes</b><div class="slab"><i style="width:${w(c.needs)}%;background:#7c8cff">Needs</i><i style="width:${w(c.wants)}%;background:#ffb938;color:#2a1a00">Wants</i><i style="width:${w(c.sv)}%;background:#37d6a0;color:#012">Save</i></div>
+ <div class="stat"><span>Needs <b>${R(c.needs)}</b></span><span>Wants <b>${R(c.wants)}</b></span><span>Save <b>${R(c.sv)}</b></span></div>
+ <p class="s">Rule of thumb: 50% needs, 30% wants, 20% savings. Your emergency target: ${R(c.needs*6)}.</p>${tp.map(x=>`<p>${x[0]} ${x[1]}</p>`).join("")}<button class="btn g" onclick="lockB()">Lock my plan (+XP)</button></div>`}
+const CK=["I have 3–6 months of expenses saved as an emergency fund","I have no high-interest debt (cards, instant loans)","I won't need this money for 3+ years","I understand what I'm buying and how it earns","The platform or adviser is SEBI-registered (I checked on SEBI's site)","I know every fee and the exit rules","I have health and term insurance","This is my own decision, not driven by a tip, FOMO or a 'guarantee'"];
+const MIX=[["Conservative",[78,12,10],"Debt-type 70–85% · Equity 5–15% · Gold 5–10%"],["Balanced",[48,44,8],"Debt-type 40–55% · Equity 35–50% · Gold 5–10%"],["Growth-oriented",[22,70,8],"Debt-type 15–30% · Equity 60–75% · Gold 5–10%"]];
+let hz=1,rx=1;
+function Invest(){const P=S.pf;
+ v.innerHTML=`<h2>🎯 Decision studio</h2><p class="s">Decide with a process, not a hunch. This is education, not personal advice or a product recommendation.</p>
+ <div class="t"><b>1 · Readiness check</b><div>${CK.map((x,i)=>`<label class="chk"><input type="checkbox" data-i="${i}" ${S.ck.includes(i)?"checked":""}><span>${x}</span></label>`).join("")}</div><div id="cv"></div></div>
+ <div class="t"><b>2 · Goal planner (SIP)</b><label class="lb">Monthly investment: <b id="l0"></b></label><input type="number" inputmode="numeric" id="p0" value="${P.sip}">
+ <label class="lb">Years: <b id="l1"></b></label><input type="range" id="p1" min="1" max="30" value="${P.yrs}"><label class="lb">Assumed yearly return: <b id="l2"></b></label><input type="range" id="p2" min="4" max="15" value="${P.ret}"><label class="lb">Inflation: <b id="l3"></b></label><input type="range" id="p3" min="3" max="9" value="${P.inf}"><div id="gp2"></div></div>
+ <div class="t"><b>3 · Risk and asset mix (illustrative)</b><p class="s" style="margin:6px 0 0">Money needed in…</p><div id="hz">${["< 3 years","3–7 years","7+ years"].map((x,i)=>`<span class="pill ${i==hz?"on":""}" data-v="${i}">${x}</span>`).join("")}</div>
+ <p class="s" style="margin:10px 0 0">If your investments fell 20%, you would…</p><div id="rx">${["Sell everything","Wait it out","Invest more"].map((x,i)=>`<span class="pill ${i==rx?"on":""}" data-v="${i}">${x}</span>`).join("")}</div><div id="mx"></div></div>`;
+ document.querySelectorAll("[data-i]").forEach(c=>c.onchange=()=>{const i=+c.dataset.i;S.ck=S.ck.filter(x=>x!=i);if(c.checked)S.ck.push(i);sv();cv()});cv();
+ ["p0","p1","p2","p3"].forEach((id,j)=>$("#"+id).oninput=()=>{P[["sip","yrs","ret","inf"][j]]=+$("#"+id).value||0;sv();gp()});gp();
+ [["hz",x=>hz=x],["rx",x=>rx=x]].forEach(([id,f])=>document.querySelectorAll("#"+id+" .pill").forEach(p=>p.onclick=()=>{document.querySelectorAll("#"+id+" .pill").forEach(q=>q.classList.remove("on"));p.classList.add("on");f(+p.dataset.v);mx()}));mx()}
+function cv(){const n=S.ck.length,m=n>=7?["Ready to proceed thoughtfully","n"]:n>=5?["Almost there. Fix the open items first","g"]:["Not yet. Strengthen the basics first","r"];
+ $("#cv").innerHTML=`<div class="bar" style="margin:10px 0"><i style="width:${n/8*100}%"></i></div><button class="btn ${m[1]}" style="width:100%">${n}/8 · ${m[0]}</button>`;if(n>=5&&!S.cd){S.cd=1;award(15,"chk")}}
+function gp(){const P=S.pf,N=P.yrs*12,f=r=>{const i=r/1200;return i?P.sip*((Math.pow(1+i,N)-1)/i)*(1+i):P.sip*N},inv=P.sip*N,ex=f(P.ret),st=f(Math.max(1,P.ret-4)),re=ex/Math.pow(1+P.inf/100,P.yrs),mx=Math.max(ex,1);
+ $("#l0").textContent=R(P.sip);$("#l1").textContent=P.yrs;$("#l2").textContent=P.ret+"%";$("#l3").textContent=P.inf+"%";
+ $("#gp2").innerHTML=`<div class="cols">${[["Invested",inv,"#7c8cff"],["Weak case",st,"#ff6b81"],["Assumed",ex,"#37d6a0"],["Real value",re,"#ffb938"]].map(([n,x,c])=>`<div class="col"><small>${R(x)}</small><i style="height:${Math.max(4,x/mx*100)}%;background:${c}"></i><small>${n}</small></div>`).join("")}</div><p class="s">Returns are not guaranteed and can be negative. "Weak case" assumes 4 points lower; "Real value" adjusts for inflation.</p>`}
+function mx(){const m=MIX[hz+rx>=4?2:hz+rx>=2?1:0],c=["#7c8cff","#37d6a0","#ffb938"];
+ $("#mx").innerHTML=`<p style="margin:14px 0 6px"><b>${m[0]} profile</b></p><div class="slab">${m[1].map((x,i)=>`<i style="width:${x}%;background:${c[i]};color:#012">${["Debt","Equity","Gold"][i]}</i>`).join("")}</div><p class="s">${m[2]}. Illustrative asset-class ranges, not a recommendation of any product. What you actually do in a real 20% fall matters more than what you answer here.</p><button class="btn" onclick="go('calm')">Test yourself in the Calm lab</button>`}
+const v=$("#v");
+S.nm=S.nm||[];
+function Nom(){const T=["Demat","Bank","Mutual fund","PF / EPF","Insurance","FD"];let ty=T[0];
+ $("#rb").innerHTML=`<div class="t"><b>Family wealth tracker</b><p class="s">Note where family money sits and whether a nominee is set. Never enter account numbers.</p><div id="ty">${T.map((x,i)=>`<span class="pill ${i?"":"on"}">${x}</span>`).join("")}</div><input id="ni" placeholder="Institution name (e.g. your bank)" style="margin-top:10px"><button class="btn g" id="na">Add</button></div><div id="nl"></div>`;
+ document.querySelectorAll("#ty .pill").forEach(p=>p.onclick=()=>{document.querySelectorAll("#ty .pill").forEach(q=>q.classList.remove("on"));p.classList.add("on");ty=p.textContent});
+ $("#na").onclick=()=>{const n=$("#ni").value.trim();if(!n)return toast("Add an institution name");S.nm.push({ty,n,ok:0});sv();$("#ni").value="";nl()};nl()}
+function nl(){const L=S.nm,k=L.filter(x=>x.ok).length,p=L.length?Math.round(k/L.length*100):0;
+ $("#nl").innerHTML=L.length?`<div class="t"><div class="stat"><span>Nominee coverage</span><b>${p}%</b></div><div class="bar"><i style="width:${p}%"></i></div>${L.map((x,i)=>`<div class="chk"><input type="checkbox" data-n="${i}" ${x.ok?"checked":""}><span style="flex:1"><b>${x.ty}</b> · ${x.n}<br><small>${x.ok?"✅ Nominee added":"⚠️ Nominee missing"}</small></span><button class="chip" data-d="${i}">✕</button></div>`).join("")}<p class="s">No nominee yet? Ask the institution for its nomination form or use its online option, and tell your family where this list is.</p></div>`:"";
+ document.querySelectorAll("[data-n]").forEach(c=>c.onchange=()=>{S.nm[+c.dataset.n].ok=c.checked?1:0;sv();nl();if(S.nm.length>=3&&S.nm.every(x=>x.ok))award(25,"fam")});
+ document.querySelectorAll("[data-d]").forEach(b=>b.onclick=()=>{S.nm.splice(+b.dataset.d,1);sv();nl()})}
+let AM="c",CH=[],AI=null;
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const md=s=>esc(s).replace(/\*\*(.+?)\*\*/g,"<b>$1</b>").replace(/\n/g,"<br>");
+const API=async(p,b)=>{const r=await fetch(p,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(b)});if(!r.ok)throw new Error(r.status);return r.json()};
+const pk=(id,f)=>document.querySelectorAll("#"+id+" .pill").forEach(p=>p.onclick=()=>{document.querySelectorAll("#"+id+" .pill").forEach(q=>q.classList.remove("on"));p.classList.add("on");f(p.textContent)});
+const say=x=>{try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(x);u.lang=/[\u0900-\u097F]/.test(x)?"hi-IN":"en-IN";speechSynthesis.speak(u)}catch(e){}};
+const GL={sip:"A SIP (Systematic Investment Plan) invests a fixed amount at regular intervals, like a monthly recurring deposit into a fund. It builds discipline and removes the stress of picking the 'right day'. Returns are not guaranteed.",nav:"NAV is a mutual fund unit's price: the fund's total value minus expenses, divided by units. A low NAV is not 'cheap' and a high NAV is not 'costly'. Growth and fees matter.",volatil:"Volatility is how much prices swing. It is normal in markets. The real danger is selling in panic at the bottom.",diversif:"Diversification means not keeping all your eggs in one basket: spread money across different asset types so one bad event hurts less.",nominee:"A nominee receives your investment if you die. Add one to every demat, bank, fund and PF account to save your family months of paperwork.",scores:"SCORES is SEBI's official complaint system. Write to the broker or company first; if unresolved, file on SEBI SCORES with your documents.",iepf:"IEPF holds dividends and shares left unclaimed for 7 years. You can still claim them through the official process on iepf.gov.in.",compound:"Compounding means earning returns on your earlier returns too. Time matters more than the amount: start early and stay invested.",guarantee:"Real investments carry risk. 'Guaranteed returns' is the classic scam line. Check SEBI registration on SEBI's own website.",scam:"Red flags: guaranteed returns, urgency, Telegram/WhatsApp tip groups, requests for OTP or screen-share. Verify registration on SEBI's own website."};
+async function health(){try{const r=await fetch("/api/health");AI=r.ok&&(await r.json()).ai}catch(e){AI=false}const e=$("#ai");if(e)e.textContent=AI?"🟢 Grok connected":"⚪ Offline demo"}
+function Ask(){v.innerHTML=`<div class="row" style="justify-content:space-between"><h2 style="margin:0">🤖 Ask Kavach</h2><span class="chip" id="ai">…</span></div><p class="s">Powered by Grok. Education only, never stock tips. AI can be wrong, so verify with official sources.</p><div class="row" style="margin-bottom:6px"><button class="btn ${AM=="c"?"g":""}" onclick="AM='c';Ask()">💬 Chat</button><button class="btn ${AM=="q"?"g":""}" onclick="AM='q';Ask()">🎓 Quiz arena</button></div><div id="am"></div>`;health();AM=="c"?Chat():Arena()}
+function bub(r,x){const d=document.createElement("div");d.className="bub "+(r=="user"?"u":"b");d.innerHTML=md(x)+(r=="user"?"":` <small>🔊</small>`);if(r!="user")d.querySelector("small").onclick=()=>say(x);$("#cl").appendChild(d);$("#cl").scrollTop=1e5;return d}
+function Chat(){$("#am").innerHTML=`<div class="t chat"><div id="cl"></div><div id="sg">${["What is a SIP?","How do I spot a fake tip group?","Explain NAV simply","Is a 'guaranteed return' real?","मुझे नॉमिनी क्यों चाहिए?"].map(x=>`<span class="pill">${x}</span>`).join("")}</div><label class="chk" style="border:0;padding:6px 0"><input type="checkbox" id="cx"><span>Share my savings rate and emergency months (no amounts) to personalise</span></label><div class="row" style="flex-wrap:nowrap"><input id="ci" placeholder="Ask in English, हिन्दी or Hinglish" style="margin:0"><button class="btn" id="mic" aria-label="Speak">🎙</button><button class="btn g" id="cs" aria-label="Send">➤</button></div></div>`;
+ bub("assistant","Namaste! I'm Kavach, your money-confidence guide. Ask me about budgeting, scams, mutual funds or your rights. I teach; I never tip.");CH.forEach(m=>bub(m.role,m.content));
+ document.querySelectorAll("#sg .pill").forEach(p=>p.onclick=()=>ask(p.textContent));
+ $("#cs").onclick=()=>ask($("#ci").value);$("#ci").onkeydown=e=>{if(e.key=="Enter")ask($("#ci").value)};
+ $("#mic").onclick=()=>{const R=window.SpeechRecognition||window.webkitSpeechRecognition;if(!R)return toast("Voice input not supported here");const r=new R();r.lang=S.lang=="hi"?"hi-IN":"en-IN";r.onresult=e=>ask(e.results[0][0].transcript);r.start();toast("Listening…")}}
+async function ask(x){x=(x||"").trim().slice(0,600);if(!x)return;const ci=$("#ci");if(ci)ci.value="";CH.push({role:"user",content:x});bub("user",x);
+ const ty=bub("assistant",""),c=bcalc();ty.innerHTML='<span class="dots"><i></i><i></i><i></i></span>';let a;
+ try{a=(await API("/api/chat",{messages:CH.slice(-8),lang:S.lang,ctx:$("#cx")&&$("#cx").checked?`Savings rate ${c.sp.toFixed(0)}%; emergency fund ${c.mo.toFixed(1)} months of needs.`:""})).reply}
+ catch(e){const k=Object.keys(GL).find(k=>x.toLowerCase().includes(k));a=k?GL[k]:"I'm in offline demo mode, so I can only explain a few basics: SIP, NAV, volatility, diversification, nominee, SCORES, IEPF, compounding and scams. Connect the backend with a Grok key for full answers (see README)."}
+ ty.remove();bub("assistant",a);CH.push({role:"assistant",content:a});if((S.aq=(S.aq||0)+1)<=10)award(3,"ai")}
+const TP=["Budgeting basics","Scams & fraud","Mutual funds basics","Risk & behaviour","Investor rights"];let tp=TP[0],lv="Easy";
+function Arena(){$("#am").innerHTML=`<div class="t"><b>Pick a topic</b><div id="tp">${TP.map((x,i)=>`<span class="pill ${i?"":"on"}">${x}</span>`).join("")}</div><input id="ct" placeholder="…or type your own topic" style="margin-top:10px"><b>Level</b><div id="lv">${["Easy","Medium","Hard"].map((x,i)=>`<span class="pill ${i?"":"on"}">${x}</span>`).join("")}</div><button class="btn g" id="gq" style="margin-top:12px">⚡ Generate quiz</button></div><div id="qa"></div>`;pk("tp",x=>tp=x);pk("lv",x=>lv=x);$("#gq").onclick=gen}
+async function gen(){const topic=$("#ct").value.trim()||tp;$("#qa").innerHTML=`<div class="t"><p class="s"><span class="dots"><i></i><i></i><i></i></span> Grok is writing your quiz…</p></div>`;let Qs;
+ try{Qs=(await API("/api/quiz",{topic,level:lv,lang:S.lang})).questions}catch(e){Qs=Q.map(q=>({q:q[0],options:q[1],answer:q[2],why:q[3]}));toast("Offline sample quiz")}play(Qs,0,0,0)}
+function play(Qs,i,sc,st){const e=$("#qa");
+ if(i>=Qs.length){const g=sc>=Math.ceil(Qs.length*.8);if(g)award(20,"qz");e.innerHTML=`<div class="t"><h2>${sc}/${Qs.length} ${g?"🏆":"👍"}</h2><p class="s">${g?"Quiz Master! Sharp thinking.":"Good effort. Ask the AI about the ones you missed."}</p><button class="btn g" onclick="Arena()">New quiz</button></div>`;return}
+ const q=Qs[i];e.innerHTML=`<div class="stat" style="margin:12px 2px"><span>Q ${i+1}/${Qs.length}</span><span>🔥 Streak ${st}</span><span>Score ${sc}</span></div><div class="fl"><div class="fi" id="fi"><div class="face"><p><b>${esc(q.q)}</b></p>${q.options.map((o,j)=>`<button class="btn opt" data-j="${j}">${esc(o)}</button>`).join("")}</div><div class="face fb" id="fb"></div></div></div>`;
+ e.querySelectorAll(".opt").forEach(o=>o.onclick=()=>{const ok=+o.dataset.j==q.answer,s2=sc+(ok?1:0),t2=ok?st+1:0;if(ok)award(10+(t2>=3?5:0));
+  $("#fb").innerHTML=`<h2>${ok?"✅ Correct!":"❌ Not quite"}</h2><p>Answer: <b>${esc(q.options[q.answer])}</b></p><p class="s">${esc(q.why)}</p><div class="row"><button class="btn g" id="nx">Next ▶</button><button class="btn" id="aw">Ask AI why</button></div>`;
+  $("#fi").classList.add("f");$("#nx").onclick=()=>play(Qs,i+1,s2,t2);$("#aw").onclick=()=>{AM="c";Ask();ask("Explain simply: "+q.q)}})}
+function spin(el){if(!el)return;const p=el.parentNode;let rx=-20,ry=0,vy=.4,d=0,px,py;p.onpointerdown=e=>{d=1;px=e.clientX;py=e.clientY};addEventListener("pointerup",()=>d=0);p.onpointermove=e=>{if(d){vy=(e.clientX-px)*.4;ry+=vy;rx-=(e.clientY-py)*.4;px=e.clientX;py=e.clientY}};
+ (function f(){if(!el.isConnected)return;if(!d){ry+=vy;vy+=(.4-vy)*.03;rx+=(-20-rx)*.03}el.style.transform=`rotateX(${rx}deg) rotateY(${ry}deg)`;requestAnimationFrame(f)})()}
+/* ---------- TRACK D: Circuit Breaker ---------- */
+let G;
+function Calm(){G={p:100,h:[100],cash:10000,u:0,c:0,k:0,lt:-99,loss:false,pa:0,ca:0,pl:0,tr:0,ev:"Market opens. Plan before you act."};
+ v.innerHTML=`<h2>🧘 Circuit Breaker Lab</h2><p class="s">Fictional market · virtual ₹10,000 · zero real money. Try to end calm, not rich.</p>
+ <div class="t"><div class="stat"><span>Price <b id="gp"></b></span><span>Value <b id="gv"></b></span><span>Tick <b id="gk"></b>/45</span></div>
+ <svg id="ch" class="chart" viewBox="0 0 300 120" width="100%"></svg>
+ <p id="ge" style="margin:8px 0;min-height:44px;color:var(--gold)"></p>
+ <div class="row"><button class="btn n" id="bb" onclick="attempt('b')">${t("buy")}</button><button class="btn r" id="bs" onclick="attempt('s')">${t("sell")}</button></div></div>
+ <div class="t"><div class="stat"><span>Pauses taken <b id="g1">0</b></span><span>Trades cancelled <b id="g2">0</b></span></div></div>`;
+ draw();tm=setInterval(step,900)}
+function step(){G.k++;let r=(Math.random()-.5)*.05;
+ if(G.k==10){r=.07;G.ev="📱 WhatsApp forward: 'Sure-shot rally, join now!' (unverified, classic FOMO bait)"}
+ if(G.k==11){r=-.05}if(G.k==22){r=-.11;G.ev="📰 Sudden market-wide fall. Fear is loud right now."}
+ if(G.k==23||G.k==24)r=-.03;if(G.k==34){r=.08;G.ev="📈 Sharp bounce. Is it a plan or regret talking?"}
+ G.p=Math.max(40,G.p*(1+r));G.h.push(G.p);draw();if(G.k>=45)finish()}
+function draw(){const mn=Math.min(...G.h),mx=Math.max(...G.h),n=G.h.length;
+ $("#ch").innerHTML=`<polyline fill="none" stroke="#4a56d8" stroke-width="3" stroke-linejoin="round" points="${G.h.map((y,i)=>(i/45*296+2).toFixed(1)+","+(112-(y-mn)/(mx-mn||1)*100).toFixed(1)).join(" ")}"/><circle cx="${((n-1)/45*296+2).toFixed(1)}" cy="${(112-(G.p-mn)/(mx-mn||1)*100).toFixed(1)}" r="5" fill="#f5a623"/>`;
+ $("#gp").textContent="₹"+G.p.toFixed(1);$("#gv").textContent="₹"+Math.round(G.cash+G.u*G.p);$("#gk").textContent=G.k;$("#ge").textContent=G.ev;$("#g1").textContent=G.pa;$("#g2").textContent=G.ca}
+function attempt(a){if(a=="b"&&G.cash<G.p)return;if(a=="s"&&!G.u)return;
+ const m=Math.abs(G.p/G.h[Math.max(0,G.h.length-4)]-1)>.04,rev=G.loss&&G.k-G.lt<8;
+ if(m||rev)breaker(a,rev?"You just booked a loss and want to trade again immediately.":"The price just moved sharply. Big moves tempt us to act on feeling.");else exec(a)}
+function exec(a){G.tr++;if(a=="b"){const q=Math.floor(G.cash*.5/G.p);G.c=(G.c*G.u+q*G.p)/((G.u+q)||1);G.u+=q;G.cash-=q*G.p}
+ else{G.loss=G.p<G.c;G.cash+=G.u*G.p;G.u=0}G.lt=G.k;draw()}
+let why="",hor="";
+function breaker(a,msg){clearInterval(tm);why=hor="";let s=10;
+ const d=document.createElement("div");d.className="modal";d.innerHTML=`<div class="t"><h2>🚦 Circuit Breaker</h2><p class="s">${msg}</p><div class="orb"></div><p style="text-align:center" id="bm">Breathe in… and out… <b id="bc">10</b></p><div id="jr" hidden><b>Decision journal</b><div id="w"></div><p class="s" style="margin:8px 0 0">Time horizon?</p><div id="hz"></div><div class="row" style="margin-top:14px"><button class="btn n" id="go1">Proceed</button><button class="btn r" id="go2">Cancel trade</button></div></div></div>`;
+ document.body.appendChild(d);
+ $("#w").innerHTML=["Part of my plan","FOMO","Revenge / recover loss","Heard a tip","Scared of falling"].map(x=>`<span class="pill">${x}</span>`).join("");
+ $("#hz").innerHTML=["Minutes","Weeks","Years"].map(x=>`<span class="pill">${x}</span>`).join("");
+ const pick=(id,f)=>d.querySelectorAll("#"+id+" .pill").forEach(p=>p.onclick=()=>{d.querySelectorAll("#"+id+" .pill").forEach(q=>q.classList.remove("on"));p.classList.add("on");f(p.textContent)});
+ pick("w",x=>why=x);pick("hz",x=>hor=x);
+ const iv=setInterval(()=>{s--;$("#bc").textContent=s;if(s<=0){clearInterval(iv);$("#bm").textContent="Pause complete. Now write why.";$("#jr").hidden=false;G.pa++;award(5,"pause")}},1000);
+ const close=c=>{d.remove();tm=setInterval(step,900);if(c)exec(a);else{G.ca++;award(5,"cancel")}if(c&&why=="Part of my plan")G.pl++;draw()};
+ $("#go1").onclick=()=>{if(!why||!hor)return toast("Pick a reason and horizon");if(why!="Part of my plan"&&hor=="Minutes")toast("Reason + minutes horizon = impulse. Your call.");close(true)};
+ $("#go2").onclick=()=>close(false)}
+function finish(){clearInterval(tm);const val=Math.round(G.cash+G.u*G.p),calm=Math.max(0,Math.min(100,45+G.pa*8+G.ca*10+G.pl*5-Math.max(0,G.tr-6)*4));
+ const msg=calm>=80?"Excellent discipline. You let process beat panic.":calm>=55?"Good. You paused sometimes. Try cancelling more heat-of-the-moment trades.":"Many reactive moves. Next round, name the emotion before every click.";
+ S.bestCalm=Math.max(S.bestCalm||0,calm);award(Math.round(calm/2)+10,calm>=80?"zen":null);
+ v.innerHTML=`<div class="t"><h2>Round over</h2><div class="scene"><div class="cube">${["🧘","🛑","📓","🚦","💪","🛡️"].map(x=>`<div class="f">${x}</div>`).join("")}</div></div>
+ <div class="stat"><span>Calm score</span><b>${calm}/100</b></div><div class="bar"><i style="width:${calm}%"></i></div>
+ <p class="s" style="margin-top:12px">Final value ₹${val} · Trades ${G.tr} · Pauses ${G.pa} · Cancelled ${G.ca}</p><p>${msg}</p>
+ <p class="s">Lesson: your result depends on your behaviour, not on guessing the market. Real losses compound the same way.</p><button class="btn g" onclick="Calm()">Play again</button></div>`}
+/* ---------- TRACK B: Rights ---------- */
+let RT="c";
+function Rights(){v.innerHTML=`<h2>⚖️ Rights Quest</h2><p class="s">Know where to complain, and how.</p><div class="row"><button class="btn ${RT=="c"?"g":""}" onclick="RT='c';Rights()">📣 Complaint Builder</button><button class="btn ${RT=="q"?"g":""}" onclick="RT='q';Rights()">🎯 Rights Quiz</button><button class="btn ${RT=="n"?"g":""}" onclick="RT='n';Rights()">👨‍👩‍👧 Nominees</button></div><div id="rb"></div>`;RT=="c"?Comp():RT=="n"?Nom():Quiz(0,0)}
+function Comp(){$("#rb").innerHTML=`<div class="t"><b>1. What went wrong?</b><div id="is">${["Unauthorised trade","Delay in withdrawal","Shares not credited","Mis-selling / false promise","Unclaimed dividend / inheritance"].map(x=>`<span class="pill">${x}</span>`).join("")}</div>
+ <p style="margin:12px 0 0"><b>2. Details</b></p><input id="en" placeholder="Broker / depository participant / company name"><input id="dt" type="date"><input id="am" inputmode="numeric" placeholder="Amount involved (₹)"><textarea id="tx" rows="3" placeholder="What happened, in your own words"></textarea>
+ <button class="btn g" id="gn">${t("gen")}</button></div><div id="out"></div>`;let is="";
+ document.querySelectorAll("#is .pill").forEach(p=>p.onclick=()=>{document.querySelectorAll("#is .pill").forEach(q=>q.classList.remove("on"));p.classList.add("on");is=p.textContent});
+ $("#gn").onclick=()=>{if(!is||!$("#en").value)return toast("Pick an issue and add the entity name");
+ const d=`To,\nThe Compliance Officer / Grievance Cell\n${$("#en").value}\n\nSubject: Complaint regarding ${is.toLowerCase()}\n\nDate of incident: ${$("#dt").value||"[date]"}\nAmount involved: ₹${$("#am").value||"[amount]"}\nClient ID / folio: [your ID]\n\nDetails:\n${$("#tx").value||"[describe the sequence of events]"}\n\nI request a written resolution within the prescribed timeline. If unresolved, I will escalate through SEBI SCORES and, where applicable, the online dispute resolution route.\n\nEnclosures: statements, screenshots, call/email records.\n\nName: [your name]   Phone: [your number]`;
+ $("#out").innerHTML=`<div class="t"><b>Your draft</b><pre id="dr"></pre><button class="btn" id="cp">${t("copy")}</button>
+ <p><b>Your path</b></p><p class="s">1. Write to the entity first and keep proof of sending.<br>2. If unresolved or unsatisfactory, file on SEBI SCORES (scores.sebi.gov.in) with the same documents.<br>3. Explore online dispute resolution if still unresolved.<br>4. Never pay anyone who promises to "recover" your money.<br><i>Check the current timelines on the official sites.</i></p></div>`;
+ $("#dr").textContent=d;$("#cp").onclick=()=>{try{navigator.clipboard.writeText(d);toast("Copied")}catch(e){toast("Select and copy")}};award(15,"comp")}}
+const Q=[["A caller says he is from your broker and asks you to install a screen-share app to 'fix your account'. You…",["Install it, he knows my name","Refuse, hang up and call the broker's official number","Share only the OTP"],1,"Remote-access apps and OTPs are how accounts get emptied. Verify only via official channels."],
+["Your late father held shares and you do not know where. What helps first?",["Nothing, they are lost","Look for demat statements, then contact the depository participant with the death certificate and legal-heir documents","Pay an agent for a 'fast claim'"],1,"There is a formal legal-heir process. Nominees on every account make it far simpler."],
+["Dividends unclaimed for 7 years are moved to…",["The broker","IEPF (Investor Education and Protection Fund)","They vanish"],1,"You can still claim them from IEPF through the official process on iepf.gov.in."],
+["Broker did not resolve your complaint. Where can you escalate?",["Social media only","SEBI SCORES, with your documents","Delete the app"],1,"SCORES is SEBI's official complaint system. Keep evidence organised."]];
+function Quiz(i,sc){const b=$("#rb");if(i>=Q.length){if(sc>=3)award(sc*5,"rr");else award(sc*5);b.innerHTML=`<div class="t"><h2>${sc}/${Q.length} correct</h2><p class="s">Knowing your rights is the strongest shield.</p><button class="btn g" onclick="Quiz(0,0)">Retry</button></div>`;return}
+ const q=Q[i];b.innerHTML=`<div class="t"><div class="stat"><span>Question ${i+1}/${Q.length}</span><span>Score ${sc}</span></div><p><b>${q[0]}</b></p>${q[1].map((o,j)=>`<button class="btn opt" data-j="${j}">${o}</button>`).join("")}<p id="ex" class="s"></p></div>`;
+ b.querySelectorAll(".opt").forEach(o=>o.onclick=()=>{const j=+o.dataset.j;b.querySelectorAll(".opt").forEach(x=>x.disabled=true);b.querySelectorAll(".opt")[q[2]].classList.add("ok");if(j!=q[2])o.classList.add("no");$("#ex").innerHTML=q[3]+`<br><br><button class="btn g" id="nx">Next ▶</button>`;$("#nx").onclick=()=>Quiz(i+1,sc+(j==q[2]?1:0))})}
+function Badges(){v.innerHTML=`<h2>🏅 Badges</h2><p class="s">${S.badges.length}/${Object.keys(BD).length} unlocked</p><div class="grid">${Object.entries(BD).map(([k,b])=>`<div class="t bdg ${S.badges.includes(k)?"":"lock"}">${b[0]}<small><b>${b[1]}</b><br>${b[2]}</small></div>`).join("")}</div>`}
+go("home");
+</script></body></html>
